@@ -7,7 +7,9 @@
     <div id="app">
         @include('partials.nav')
         <main class="py-4">
-            @yield('content')
+        @include('flash::message')
+        @include('layouts._errors')
+        @yield('content')
         </main>
     </div>
 </body>

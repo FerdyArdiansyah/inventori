@@ -6,7 +6,9 @@
             <div class="col-md-6">
                 <div class="card  ">
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{route('suplier.store')}}" method="post">
+                        @csrf
+
                             <div class="form-group">
                                 <label for="name">Nama Suplier</label>
                                 <input type="text" name="name" id="nama_barang" class="form-control">
