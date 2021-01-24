@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                            <a href="{{route('suplier.create')}}" class="btn btn-info">Tambah Suplier baru</a>
+                                <a href="{{route('suplier.create')}}" class="btn btn-info">Tambah Suplier baru</a>
                             </div>
                             <div>
                                 <form action="">
@@ -41,24 +41,29 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($supliers as $suplier)
                                 <tr>
-                                    <td>PT.Nvidia</td>
-                                    <td>Cikarang</td>
-                                    <td>Nvidia@gmail.com</td>
-                                    <td>+62 11111111</td>
+                                    <td>{{$suplier->name}}</td>
+                                    <td>{{$suplier->alamat}}</td>
+                                    <td>{{$suplier->email}}</td>
+                                    <td>{{$suplier->phone}}</td>
                                     <td>
-                                        <form action="">
-                                            <a href="{{route('suplier.edit')}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                        <form action="{{route('suplier.delete',$suplier->id)}}" method="post">
+                                            @csrf 
+                                            @method('DELETE')
+                                            <a href="{{route('suplier.edit',$suplier->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
                                             <button class="btn btn-outline-danger btn-sm">Delete</button>
                                         </form>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                                    
+                                    </td>                             
+                                </tr>                             
+                                @endforeach                         
+                            </tbody>                      
+                        </table>                  
+                    </div>  
+                </div>         
+            </div>        
         </div>
     </div>
-
-@endsection
+    
+    @endsection

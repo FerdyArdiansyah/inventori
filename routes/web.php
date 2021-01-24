@@ -40,5 +40,8 @@ Route::get('/home', 'HomeController@index')->name('home');
  Route::group(['prefix'=> 'suplier'], function(){
     Route::get('index','Suplier\SuplierController@index')->name('suplier.index');
     Route::get('create','Suplier\SuplierController@create')->name('suplier.create');
-    Route::get('edit','Suplier\SuplierController@edit')->name('suplier.edit');
+    Route::post('store','Suplier\SuplierController@store')->name('suplier.store');
+    Route::get('edit/{suplier}','Suplier\SuplierController@edit')->name('suplier.edit');
+    Route::patch('update/{suplier}','Suplier\SuplierController@update')->name('suplier.update');
+    Route::delete('delete/{suplier}','Suplier\SuplierController@destroy')->name('suplier.delete');
 });
