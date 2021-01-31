@@ -25,10 +25,13 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 
  Route::group(['prefix'=>'master-barang'],function(){
-     Route::get('/index','BarangController@index')->name('master-barang');
-     Route::get('/formulir-barang','MasterBarang\MasterBarangController@create')->name('master-barang.formulir-barang');
-     Route::get('/edit','MasterBarang\MasterBarangController@edit')->name('master-barang.edit');
-     Route::get('/show','MasterBarang\MasterBarangController@show')->name('master-barang.show');
+    Route::get('/index','BarangController@index')->name('master-barang');
+    Route::get('/formulir-barang','MasterBarang\MasterBarangController@create')->name('master-barang.formulir-barang');
+    Route::get('/edit/{barang}','MasterBarang\MasterBarangController@edit')->name('master-barang.edit');
+    Route::post('/index','MasterBarang\MasterBarangController@store')->name('master-barang.store');
+    Route::get('/show/{barang}','MasterBarang\MasterBarangController@show')->name('master-barang.show');
+    Route::patch('/update/{barang}','MasterBarang\MasterBarangController@update')->name('master-barang.update');
+    Route::delete('/delete/{barang}','MasterBarang\MasterBarangController@destroy')->name('master-barang.delete');
     
  });
 
