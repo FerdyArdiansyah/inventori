@@ -135,7 +135,9 @@ return [
     */
 
     'providers' => [
-
+        // ...
+        Alfa6661\AutoNumber\AutoNumberServiceProvider::class,
+    
         /*
          * Laravel Framework Service Providers...
          */
@@ -165,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Application Service Providers...

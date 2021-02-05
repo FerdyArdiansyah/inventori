@@ -20,9 +20,9 @@
                             <div class="form-group">
                                 <label for="suplier_id">Nama Suplier</label>
                                 <select name="suplier_id" id="suplier_id" class="form-control">
-                                    <option value="">- pilih suplier -</option>
+                                    <option value="">Pilih suplier</option>
                                     @foreach ($supliers as $suplier)
-                                        <option value="{{$suplier->id}}">{{$suplier->name}}</option>
+                                    <option value="{{$suplier->id}}">{{$suplier->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
