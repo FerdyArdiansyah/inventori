@@ -29,10 +29,6 @@
                                     </div>
                                 </div>
                             </form>
-                            
-                        <div class="d-flex">
-                            <input type="date" name="" id="" class="form-control mr-2">
-                            <button type="submit" class="btn btn-info primary mb-2">Cari Data</button>
                         </div>
                         </div>
                             <table class="table table-stripped">

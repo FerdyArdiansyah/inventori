@@ -17,6 +17,12 @@ class MasterBarangController extends Controller
     }
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'suplier_id' => 'required',
+            'kode_barang' => 'required',
+            'nama_barang' => 'required|regex:/^[a-zA-Z]+$/u',
+            'quantity' => 'required|numeric',  
+        ]);
         $suplier = Barang::create([
             'suplier_id' => $request->suplier_id,
             'kode_barang' => $request->kode_barang,
