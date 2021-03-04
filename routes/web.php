@@ -47,7 +47,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('index','Suplier\SuplierController@index')->name('suplier.index');
     Route::get('create','Suplier\SuplierController@create')->name('suplier.create');
     Route::post('store','Suplier\SuplierController@store')->name('suplier.store');
-    Route::get('laporan-barang', 'Laporan\BarangController@index')->name('laporan.periode.barang');
+    Route::get('laporan-suplier', 'Laporan\SuplierController@index')->name('laporan.periode.suplier');
     Route::get('edit/{suplier}','Suplier\SuplierController@edit')->name('suplier.edit');
     Route::patch('update/{suplier}','Suplier\SuplierController@update')->name('suplier.update');
     Route::delete('delete/{suplier}','Suplier\SuplierController@destroy')->name('suplier.delete');

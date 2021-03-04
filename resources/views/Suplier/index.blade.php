@@ -10,7 +10,8 @@
                             <div>
                                 <a href="{{route('suplier.create')}}" class="btn btn-info">Tambah Suplier baru</a>
                             </div>
-                            <form action="{{route('laporan.periode.barang')}}" method="GET">
+                            
+                            <form action="{{route('laporan.periode.suplier')}}" method="GET">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
@@ -33,6 +34,7 @@
                             <thead>
                                 <tr>
                                     <th>Nama Suplier</th>
+                                    <th>Kode Suplier</th>
                                     <th>Alamat</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -43,6 +45,7 @@
                                 @foreach($supliers as $suplier)
                                 <tr>
                                     <td>{{$suplier->name}}</td>
+                                    <td>{{$suplier->kode_suplier}}
                                     <td>{{$suplier->alamat}}</td>
                                     <td>{{$suplier->email}}</td>
                                     <td>{{$suplier->phone}}</td>

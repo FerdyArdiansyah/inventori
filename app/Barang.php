@@ -2,12 +2,25 @@
 
 namespace App;
 
+use Alfa6661\AutoNumber\AutoNumberTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    protected$table = 'barangs';
-    protected$guarded = [];
+    use AutoNumberTrait;
+
+        protected$table = 'barangs';
+        protected$guarded = [];
+
+    public function getAutoNumberOptions()
+    {
+        return [
+            'kode_barang' => [
+                'format' => function() {
+                    return 'BRG/'.date('Ymd').'/?';
+                }, 'length' => 5]
+            ];
+    }
 
     public function suplier()
     {

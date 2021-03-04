@@ -16,6 +16,7 @@ class CreateSupliersTable extends Migration
         Schema::create('supliers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('kode_suplier');
             $table->string('alamat');
             $table->string('email')->unique();
             $table->string('phone');

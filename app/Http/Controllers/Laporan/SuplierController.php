@@ -15,8 +15,8 @@ class SuplierController extends Controller
             $suplier = Suplier::with('suplier')->whereBetween('created_at',[request('tgl_awal'),request('tgl_akhir')])->get();
                 }
 
-        $pdf = PDF::loadView('laporan.barang.index', compact('suplier'))->setPaper('a4','landscape');
+        $pdf = PDF::loadView('laporan.suplier.index', compact('suplier'))->setPaper('a4','landscape');
 
-        return $pdf->stream('laporan_barang.pdf');
+        return $pdf->stream('laporan_suplier.pdf');
     }
 }
